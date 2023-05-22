@@ -1,0 +1,37 @@
+
+<div class="container border bg-dark text-white m-8 p-2">
+  <div class="ui">
+    <h1  class="text-center">Team Generator</h1>
+    <ul class="border overflow-auto" >
+      <li *ngFor="let mem of member">{{mem}}</li>
+    </ul>
+    <div class="add-members-container">
+      <input type="text" placeholder="Name" #addMemberinput
+      [value]="newMemberName"
+      (input)="oninput(addMemberinput.value)">
+      <button  class="btn btn-sm btn-primary m-2" (click)="Addteamname(member)">Add</button>
+    </div>
+    <div class="input-container">
+      <input type="number" 
+      placeholder="# of team" #numberofTeams
+      (input)="numberofTeaminput(numberofTeams.value)"
+      [value]="numberofTeam"
+      >
+      <button class="btn btn-sm btn-primary m-2" (click)="generatemember()">Generator</button>
+    </div>
+  </div>
+  <p *ngIf="errorMessage" class="errorMessage text-danger">{{errorMessage}}</p>
+  
+</div>
+
+<div class="container border bg-dark text-white m-8 p-2">
+  <div *ngIf="teams.length">
+    <div *ngFor="let team of teams; let i=index">
+    <h3>Team{{i+1}}</h3>
+    <ul class="border">
+      <li  *ngFor="let memberes of team">{{memberes}}</li>
+    </ul>
+    <button class="btn btn-sm btn-primary" (click)="editmember(member)">edit</button>
+  </div>
+</div>
+</div>

@@ -1,0 +1,13 @@
+.text{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+p{
+    display: block;
+    padding: 1rem;
+}
+ span{
+  
+padding: 1rem;
+}
